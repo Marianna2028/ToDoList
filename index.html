@@ -3,27 +3,34 @@
   <head>
     <title>Form Example</title>
     <script>
-        document,addEventListener('DOMContentLoaded', function() {
-          document.querySelector('#form').onsubmit = function() {
+      document.addEventListener('DOMContentLoaded', function() {
+
+        // When the form is submitted:
+        document.querySelector('#form').onsubmit = function(event) {
+          event.preventDefault(); // prevents form reload
           let message = document.querySelector("#message").value;
-            alert(message);
-                     
-          }
-          document.querySelector("#abutton").onclick = functiom() {
-             alert(message);
-          }
-          
-          
-        })
-      
-      
+          alert("Form submitted! Message: " + message);
+        };
+
+        // When the button is clicked:
+        document.querySelector("#abutton").onclick = function() {
+          let message = document.querySelector("#message").value;
+          alert("Button clicked! Message: " + message);
+        };
+
+      });
     </script>
   </head>
   <body>
+    <h1>Tasks</h1>
+    <ul id="tasks_list"></ul>
+
     <form id="form">
-      <input id="message" type="text" />
-      <button id="abutton">A Button</button>
-      <input type="submit" />
+      <input id="message" type="text" placeholder="Enter message here" />
+      <input id="task" autocomplete="off" autofocus placeholder="Enter New Task Here" type="text">
+      <input id="submit" type="submit" value="Submit Form">
+      <button id="abutton" type="button">A Button</button>
     </form>
   </body>
 </html>
+
