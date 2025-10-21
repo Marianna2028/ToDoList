@@ -3,7 +3,16 @@
   <head>
     <title>Form Example</title>
     <script>
-      //javascript can be added later 
+        document,addEventListener('DOMContentLoaded', function() {
+          document.querySelector('#form').onsubmit = function() {
+          let message = document.querySelector("#message").value;
+            alert(message);
+            
+          }
+          
+          
+        })
+      
       
     </script>
   </head>
